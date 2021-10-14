@@ -1,1 +1,1 @@
-https://github.com/edgargaticaCU/TRAPI-testing/workflows/Project%20Tests/badge.svg
+![TRAPI Validation Testing](https://github.com/edgargaticaCU/TRAPI-testing/workflows/Validation%20Tests/badge.svg)
