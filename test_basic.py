@@ -7,7 +7,7 @@ from reasoner_validator import validate
 from jsonschema import ValidationError
 
 
-class KPTextMiningTests(unittest.TestCase):
+class TestTextMiningKP(unittest.TestCase):
     base_url_smartapi = 'https://api.bte.ncats.io/v1/smartapi/978fe380a147a8641caf72320862697b'
     payload = {
         "message": {
