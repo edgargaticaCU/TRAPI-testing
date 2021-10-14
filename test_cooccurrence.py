@@ -1,14 +1,11 @@
 import unittest
-
-import jsonschema.exceptions
+import jsonschema
 import requests
-import json
 from reasoner_validator import validate
-from jsonschema import ValidationError
 
 
-class TestTextMiningKP(unittest.TestCase):
-    base_url_smartapi = 'https://api.bte.ncats.io/v1/smartapi/978fe380a147a8641caf72320862697b'
+class TestTextMiningCooccurrence(unittest.TestCase):
+    base_url_smartapi = 'https://api.bte.ncats.io/v1/smartapi/5be0f321a829792e934545998b9c6afe'
     payload = {
         "message": {
             "query_graph": {
@@ -52,17 +49,6 @@ class TestTextMiningKP(unittest.TestCase):
         try:
             validate(json_response["message"], "Message", "1.2.0")
         except jsonschema.exceptions.ValidationError as v:
-            print(v.message)
-            passed_validation = False
-        self.assertTrue(passed_validation)
-
-    def test_message(self):
-        passed_validation = True
-        with open('message.json', 'r') as message_file:
-            message = message_file.read()
-        try:
-            validate(json.loads(message), "Message", "1.2.0")
-        except ValidationError as v:
             print(v.message)
             passed_validation = False
         self.assertTrue(passed_validation)
